@@ -1,0 +1,10 @@
+## 
+This is a tool for doing a type of linguistic encoding that currently there are no applications for. 
+Natomic analysis is encoding objects and relationships as image collections grouped by reference. 
+The tool should allow someone to log into the site and choose to work or study.
+If work is chosen, then they're to their account where they can either pull up a prior work or begin a new one with the chosen presets.
+If study is chosen they can either look up past reports in a search system or investigate the instructional documents. 
+When working the document saves the natomic units in a nested format that is highly conducive to templated analysis. 
+
+This tool takes a 100 hour job and turns it into a 1 hour job and I am giddy at the prospect of having it on hand.
+##
