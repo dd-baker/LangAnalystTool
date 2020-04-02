@@ -1,0 +1,35 @@
+
+Public class ???{
+String contentString = textInput;
+int backBracket;
+int frontBracket;
+char[] contentArray = new char[contentString.length()];
+char[] narremeArray new char[contentString.length];
+String[] stringArray;
+String narremeString;
+
+static void isolateNarremes(String[] args){
+for (int i = 0; i < contentString.length(); i++) {
+	contentArray[i] = contentString.charAt(i); }
+
+// System.out.println(contentArray[i]);
+
+for (int i = 0; i < contentArray.length; i++){
+	if (contentArray[i].equals("]")){
+		backBracket = i;		
+		for (int ii = contentArrary[i - 1]; ii > 0; i--){
+			if(contentArray[ii].equals("[")){
+			frontBracket = ii; 
+			}
+			for(int iii = ii; iii < (i - ii); i++){	
+				narremeArray = narremeArray.concat(contentArray[ii]);
+			}
+		}
+		narremeString = narremeArray.toString();
+// System.out.println(narremeString);
+		stringArray.push(narremeString);		
+	}
+}
+			
+			 
+

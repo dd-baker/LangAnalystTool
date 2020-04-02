@@ -5,11 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>Form</h1>
-<form action="#" th:action="@{/textInput}" th:object="${textInput}" method="post">
-    <p>Id: <input type="text" th:field="*{id}" /></p>
-    <p>Content: <input type="text" th:field="*{content}" /></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+<h1>Input</h1>
+<form name="Text Input" method="post" action="textInputServlet">
+    Title: <input type="text" name="title"/> <br/>
+    Text: <input type="text" name="content"/> <br/>
+    <input type="submit" value="Input" />
 </form>
 </body>
 </html>

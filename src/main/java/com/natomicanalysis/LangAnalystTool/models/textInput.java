@@ -1,16 +1,12 @@
 package com.natomicanalysis.LangAnalystTool.models;
 
 public class textInput {
-    private long id;
+    private String title;
     private String content;
 
-    public long getId() {
-        return id;
-    }
+    public long getTitle() { return title; }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    public void setTitle(long id) { this.title = title; }
 
     public String getContent() {
         return content;
