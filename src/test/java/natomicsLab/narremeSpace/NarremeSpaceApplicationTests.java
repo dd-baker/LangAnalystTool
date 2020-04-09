@@ -1,10 +1,10 @@
-package com.natomicanalysis.LangAnalystTool;
+package natomicsLab.narremeSpace;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LangAnalystToolApplicationTests {
+class NarremeSpaceApplicationTests {
 
 	@Test
 	void contextLoads() {
