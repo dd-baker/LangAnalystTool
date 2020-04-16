@@ -22,12 +22,12 @@ for (int i = 0; i < contentArray2.length; i++){
 	if (contentArray2[i].equals("]")){
 		backBracket = i;
 		contentArray2[i] = "*";
-		for (int ii = contentArray2[i - 1]; ii > 0; i--){
+		for (int ii = contentArray2[i - 1]; ii > 0; ii--){
 			if(contentArray2[ii].equals("[")){
 			frontBracket = ii; 
 			contentArray2[ii] = "*";
 			}
-			for(int iii = frontBracket; iii < (backBracket - frontBracket); i++){	
+			for(int iii = frontBracket; iii < (backBracket - frontBracket); iii++){	
 				narremeArray = narremeArray.concat(contentArray2[backBracket]);
 			}
 		}
