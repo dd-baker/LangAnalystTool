@@ -3,15 +3,15 @@ package natomicsLab.narremeSpace.modules;
 import javax.persistence.*;
 
 @Entity
-@Table(name='role')
+@Table(name= "role")
 public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name='role_id')
+    @Column(name= "role_id")
     private int roleId;
 
-    @Column(name = 'role')
+    @Column(name= "role")
     private String role;
 
     public Role(){

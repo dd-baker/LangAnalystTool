@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class CustomUserDetails extends Users implements UserDetails {
 
-    public CustomUserDetails(final Object users) {
+    public CustomUserDetails(final Users users) {
         super(users);
     }
 
@@ -31,7 +31,7 @@ public class CustomUserDetails extends Users implements UserDetails {
 
     @Override
     public String getUsername() {
-        return super.getUser_name();
+        return super.getName();
     }
 
     @Override

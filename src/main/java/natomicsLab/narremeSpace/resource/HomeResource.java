@@ -5,17 +5,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/rest/login")
+@RequestMapping("/rest/home")
 @RestController
-public class LoginResource {
+public class HomeResource {
+
     @GetMapping("/all")
-    public String login() {
-        return "Login Filler";
+    public String home() {
+        return "Home Filler";
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("/secured/all")
-    public String securedLogin() {
-        return "Secured Login Filler";
+    public String securedHome() {
+        return "Secured Home Filler";
+    }
+
+    @GetMapping("/secured/alternate")
+    public String alternate(){
+        return "alternate";
     }
 }

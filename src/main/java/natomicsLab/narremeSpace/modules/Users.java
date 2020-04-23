@@ -4,22 +4,22 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = 'user')
+@Table(name = "user")
 public class Users {
-    @ID
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = 'user_id')
+    @Column(name = "user_id")
     private int id;
-    @Column(name = 'active')
+    @Column(name = "active")
     private int active;
-    @Column(name = 'user_name')
-    private String user_name;
-    @Column(name = 'password')
+    @Column(name = "name")
+    private String name;
+    @Column(name = "password")
     private String password;
-    @Column(name = 'email')
+    @Column(name = "email")
     private String email;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER);
-    @JoinTable(name = 'user_role', joinColumns = @JoinColumn(name = 'user_id'))
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
     public Users() {
@@ -29,7 +29,7 @@ public class Users {
         this.active = users.getActive();
         this.email = users.getEmail();
         this.roles = users.getRoles();
-        this.user_name = users.getUser_name();
+        this.name= users.getName();
         this.id = users.getId();
         this.password = users.getPassword();
     }
@@ -50,12 +50,12 @@ public class Users {
         this.active = active;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getName() {
+        return name;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
