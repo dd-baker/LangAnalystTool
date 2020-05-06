@@ -2,30 +2,44 @@ package natomicsLab.narremeSpace.controllers;
 
 import natomicsLab.narremeSpace.
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
 public class IsolatorController {
+    @GetMapping("/isolator")
     public String narremeIsolator(workspaceSubmission) {
+        char[] workspaceSubmission = new char[Submission.split("")];
         List<String> narremeList = new ArrayList<String>();
-        for (i = 0; i < workspaceSubmission.length(); i++) {
-            String narreme = "";
+        for (int i = 0; i < workspaceSubmission.length(); i++) {
+            int leftBracketCount;
+            int firstLeftBracket;
+            int rightBracketCount;
+            int lastRightBracket;
+            int firstRightBracket;
+            int nextRightBracket;
+            String primaryMeme;
+            String nestedMeme;
+            String narreme;
+
             if (workspaceSubmission[i] = "]") {
-                String firstRightBracket = workspaceSubmission[i];
-                for (ii = 0; ii < i; ii++) {
+                firstRightBracket = workspaceSubmission[i];
+                for (int ii = 0; ii < i; ii++) {
                     if (workspaceSubmission[ii] = "[") {
-                        int leftBracketCount = leftBracketCount + 1;
+                         leftBracketCount = leftBracketCount + 1;
                         if (firstLeftBracket = null) {
-                            String firstLeftBracket = workspaceSubmission[ii];
+                            firstLeftBracket = workspaceSubmission[ii];
                         }
                     }
                 }
-                for (iii = 0; iii < i + 1; iii++) {
-                    if (workspaceSubmission[iii] = "]" {
-                        int rightBracketCount = rightBracketCount + 1;
-                        if (rightBracketCount = leftBracketCount) {
+                for (int iii = 0; iii < i + 1; iii++) {
+                    if (workspaceSubmission[iii] = "]") {
+                        rightBracketCount = rightBracketCount + 1;
+                        if (rightBracketCount == leftBracketCount) {
                             lastRightBracket = workspaceSubmission[iii]
                         }
                     }
@@ -34,7 +48,7 @@ public class IsolatorController {
                 workspaceSubmission = workspaceSubmission.replace(narreme, "");
             }
 
-            for (iv = 0; iv < narreme.length; iv--) {
+            for (int iv = 0; iv < narreme.length(); iv--) {
                 if (primaryMeme = null) {
                     if (narreme[iv] = "[") {
                         int lastLeftBracket = narreme[iv];
@@ -43,13 +57,13 @@ public class IsolatorController {
                         narremeList.add(primaryMeme);
                     }
                 }
-                elseif(narreme[iv] = "[") {
+                else if(narreme[iv] = "[") {
                     int lastLeftBracket = narreme[iv];
                     for (v = lastLeftBracket - 1; v + 1 > 0; v--) {
                         if (narreme[v] = "]") {
-                            String nextRightBracket = narreme[v];
+                            nextRightBracket = narreme[v];
                         }
-                        String nestedMeme = narreme.substring(lastLeftBracket, nextRightBracket);
+                        nestedMeme = narreme.substring(lastLeftBracket, nextRightBracket);
                         narreme = narreme.replace(nestedMeme[iv], "*");
                         narremeList.add(nestedMeme);
                     }
