@@ -1,41 +1,49 @@
+List<String> narremeList = new ArrayList<String>();
 
-Public class narremeIsolator{
-String contentString = textInput;
-string backBracket;
-String frontBracket;
-char[] contentArray1 = new char[contentString.length()];
-char[] narremeArray new char[contentString.length];
-String[] stringArray;
-String narremeString;
+    for(i = 0; i < workspaceSubmission.length(); i++){
+        String narreme = "";
+        if(workspaceSubmission[i] = "]"){
+            String firstRightBracket = workspaceSubmission[i];
+            for(ii = 0; ii < i; ii++){
+                if(workspaceSubmission[ii] = "["){
+                    int leftBracketCount = leftBracketCount + 1;
+                    if(firstLeftBracket = null){
+                        String firstLeftBracket = workspaceSubmission[ii];
+                    }
+                }
+            }
+            for(iii = 0; iii < i+1; iii++){
+                if(workspaceSubmission[iii] = "]"{
+                    int rightBracketCount = rightBracketCount + 1;
+                    if(rightBracketCount = leftBracketCount){
+                        lastRightBracket = workspaceSubmission[iii]
+                    }
+                }
+            }
+            narreme = workspaceSubmission.substring(firstLeftBracket, lastRightBracket);
+            workspaceSubmission = workspaceSubmission.replace(narreme, "");
+        }
 
-static void isolateNarremes(String[] args){
-for (int i = 0; i < contentString.length(); i++) {
-	contentArray1[i] = contentString.charAt(i);
- }
-
-char[] contentArray2 = contentArray1;
-
-// System.out.println(contentArray1);
-// System.out.println(contentArray2);
-
-for (int i = 0; i < contentArray2.length; i++){
-	if (contentArray2[i].equals("]")){
-		backBracket = i;
-		contentArray2[i] = "*";
-		for (int ii = contentArray2[i - 1]; ii > 0; ii--){
-			if(contentArray2[ii].equals("[")){
-			frontBracket = ii; 
-			contentArray2[ii] = "*";
-			}
-			for(int iii = frontBracket; iii < (backBracket - frontBracket); iii++){	
-				narremeArray = narremeArray.concat(contentArray2[backBracket]);
-			}
-		}
-		narremeString = narremeArray.toString();
-// System.out.println(narremeString);
-		stringArray.push(narremeString);		
-	}
-}
-			
-			 
-
+        for(iv = 0; iv < narreme.length ; iv--) {
+            if (primaryMeme = null) {
+                if (narreme[iv] = "[") {
+                    String lastLeftBracket = narreme[iv];
+                    String primaryMeme = narreme.substring(lastLeftBracket, firstRightBracket);
+                    narreme = narreme.replace(primaryMeme, "*");
+                    narremeList.add(primaryMeme);
+                }
+            }
+            elseif(narreme[iv] = "[") {
+                String lastLeftBracket = narreme[iv];
+                for (v = lastLeftBracket - 1; v + 1 > 0; v--) {
+                    if (narreme[v] = "]") {
+                        String nextRightBracket = narreme[v];
+                    }
+                    String nestedMeme[ iv] =narreme.substring(lastLeftBracket, nextRightBracket)
+                    narreme = narreme.replace(nestedMeme[iv], "*");
+                    narremeList.add(nestedMeme);
+                }
+            }
+        } 
+        return narremeList;
+    }
