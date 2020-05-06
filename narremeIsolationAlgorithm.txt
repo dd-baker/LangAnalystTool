@@ -1,8 +1,8 @@
 
-Public class ???{
+Public class narremeIsolator{
 String contentString = textInput;
-int backBracket;
-int frontBracket;
+string backBracket;
+String frontBracket;
 char[] contentArray1 = new char[contentString.length()];
 char[] narremeArray new char[contentString.length];
 String[] stringArray;
